@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Adlytics Ad Blocker</title>
+<title>DNS Ad Blocker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,7 +28,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -39,7 +38,6 @@
     overflow-x: hidden;
   }
 
-  /* ── Grid noise texture overlay ── */
   body::before {
     content: '';
     position: fixed;
@@ -51,7 +49,6 @@
     z-index: 0;
   }
 
-  /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
@@ -78,7 +75,6 @@
   }
   .nav-links a:hover { color: var(--accent); }
 
-  /* ── HERO ── */
   .hero {
     position: relative; z-index: 1;
     min-height: 100vh;
@@ -116,7 +112,7 @@
     font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 400; line-height: 1.7;
     color: var(--text2);
-    max-width: 520px;
+    max-width: 620px;
     animation: fadeUp 0.6s 0.2s ease both;
   }
 
@@ -146,7 +142,6 @@
   }
   .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* ── FEATURE STRIP ── */
   .strip {
     position: relative; z-index: 1;
     border-top: 1px solid var(--border);
@@ -168,7 +163,6 @@
   }
   .strip-item svg { color: var(--accent); flex-shrink: 0; }
 
-  /* ── FEATURES SECTION ── */
   .section {
     position: relative; z-index: 1;
     padding: 100px 48px;
@@ -209,8 +203,6 @@
   }
   .feat-card:hover { background: var(--card2); border-color: var(--border2); }
   .feat-card:hover::after { opacity: 1; }
-  .feat-card:first-child { border-radius: 12px 0 0 12px; }
-  .feat-card:last-child { border-radius: 0 12px 12px 0; }
 
   .feat-icon {
     width: 44px; height: 44px;
@@ -223,7 +215,6 @@
   .feat-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
   .feat-card p { font-size: 0.875rem; color: var(--text2); line-height: 1.6; }
 
-  /* ── PRIVACY HIGHLIGHT ── */
   .privacy-callout {
     position: relative; z-index: 1;
     margin: 0 48px 80px;
@@ -264,7 +255,6 @@
   .callout-cta a:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(33,230,167,0.4); }
   .callout-cta p { margin-top: 12px; font-size: 0.8rem; color: var(--text3); }
 
-  /* ── FOOTER ── */
   footer {
     position: relative; z-index: 1;
     border-top: 1px solid var(--border);
@@ -279,7 +269,6 @@
   .footer-links a:hover { color: var(--accent); }
   .footer-copy { font-size: 0.8rem; color: var(--text3); }
 
-  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -293,7 +282,6 @@
     to   { transform: translateX(-50%); }
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     .nav-links { display: none; }
@@ -302,14 +290,13 @@
     footer { padding: 36px 20px; flex-direction: column; text-align: center; }
     .footer-links { justify-content: center; }
     .features-grid { grid-template-columns: 1fr; }
-    .feat-card:first-child, .feat-card:last-child { border-radius: 0; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">Adlytics<span class="dot">.</span></a>
+  <a class="nav-logo" href="index.html">DNS Ad Blocker<span class="dot">.</span></a>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#privacy">Privacy</a>
@@ -324,8 +311,8 @@
   </div>
   <h1>Block Ads at the<br><em>DNS Level</em></h1>
   <p class="hero-sub">
-    Local DNS ad blocker using Android VPN permission only.
-    No remote VPN server. No data sent to our servers.
+    Local DNS ad blocker and device security filter using Android VPN permission only for on-device DNS filtering.
+    No remote VPN server.
   </p>
   <div class="hero-actions">
     <a href="privacy-policy.html" class="btn-primary">
@@ -339,38 +326,37 @@
   </div>
 </section>
 
-<!-- Scrolling strip -->
 <div class="strip">
   <div class="strip-inner">
     <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> On-Device Only</div>
     <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07" stroke="white" stroke-width="2"/></svg> No Remote VPN</div>
     <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> No Account Needed</div>
     <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> DNS Ad Filtering</div>
-    <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Zero Data Collection</div>
+    <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> No Data Sent To Servers</div>
     <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/></svg> Custom Blocklists</div>
-    <!-- duplicate for seamless loop -->
+
     <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> On-Device Only</div>
     <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07" stroke="white" stroke-width="2"/></svg> No Remote VPN</div>
     <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> No Account Needed</div>
     <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> DNS Ad Filtering</div>
-    <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Zero Data Collection</div>
+    <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> No Data Sent To Servers</div>
     <div class="strip-item"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/></svg> Custom Blocklists</div>
   </div>
 </div>
 
 <section class="section" id="features">
   <div class="section-label">// How It Works</div>
-  <h2 class="section-title">Powerful filtering. <em>Zero compromise.</em></h2>
+  <h2 class="section-title">Powerful filtering. <em>Local by design.</em></h2>
   <div class="features-grid">
     <div class="feat-card">
       <div class="feat-icon">🛡️</div>
-      <h3>Local VPN Tunnel</h3>
-      <p>Uses Android's VpnService API to create an on-device filtering loop. All filtering happens locally — never routed to an external server.</p>
+      <h3>On-Device DNS Filtering</h3>
+      <p>Uses Android's VpnService API only to create an on-device DNS filtering loop. Filtering stays local and is not routed to a remote VPN server.</p>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🚫</div>
       <h3>DNS-Level Blocking</h3>
-      <p>Intercepts DNS queries and blocks ad, tracker, malware, and category domains before they can load — no content injection needed.</p>
+      <p>Intercepts DNS queries and blocks ad, tracker, malware, and category domains before they can load.</p>
     </div>
     <div class="feat-card">
       <div class="feat-icon">📋</div>
@@ -380,31 +366,31 @@
     <div class="feat-card">
       <div class="feat-icon">📊</div>
       <h3>Block History</h3>
-      <p>Review which domains were blocked, stored entirely on your device. Export to CSV anytime you want — your data, your control.</p>
+      <p>Review which domains were blocked, stored entirely on your device. Export to CSV anytime you want.</p>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🔑</div>
       <h3>No Account</h3>
-      <p>No sign-in, no user accounts, no email collection. Install and run. That's it.</p>
+      <p>No sign-in, no user accounts, no email collection required to use the app.</p>
     </div>
     <div class="feat-card">
       <div class="feat-icon">☁️</div>
       <h3>No Cloud Backup</h3>
-      <p>App data is not backed up via Android cloud backup. Your filtering history and custom rules stay on your device.</p>
+      <p>App data is not backed up via Android cloud backup. Filtering history and custom rules stay on your device.</p>
     </div>
   </div>
 </section>
 
 <div class="privacy-callout" id="privacy">
   <div class="callout-text">
-    <h2>Privacy is not a<br><span>feature</span>. It's the default.</h2>
-    <p>Adlytics was built with a simple principle: filter locally, collect nothing. Your browsing history never leaves your phone.</p>
+    <h2>Privacy is the<br><span>default</span>.</h2>
+    <p>DNS Ad Blocker was built with a simple principle: filter locally and minimize off-device data transfer. Blocked-domain history and filtering settings stay on your device unless you export them yourself.</p>
     <ul class="callout-checks">
-      <li>No browsing or DNS history sent to our servers</li>
-      <li>No passwords, messages, or payment details collected</li>
+      <li>No blocked-domain history or filtering settings sent to our servers</li>
       <li>No user accounts or sign-in required</li>
-      <li>DNS requests processed entirely on-device</li>
-      <li>You can delete all data by uninstalling the app</li>
+      <li>DNS requests processed on-device for filtering</li>
+      <li>No remote VPN server</li>
+      <li>You can remove local app data by uninstalling the app</li>
     </ul>
   </div>
   <div class="callout-cta">
@@ -417,7 +403,7 @@
 </div>
 
 <footer>
-  <div class="footer-brand">Adlytics.</div>
+  <div class="footer-brand">DNS Ad Blocker.</div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="privacy-policy.html">Privacy Policy</a>
